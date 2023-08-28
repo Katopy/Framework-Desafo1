@@ -1,0 +1,68 @@
+TIPOUSUARIO:
+-ID
+-Datos generales (correo, nombre, apellido, direccion, contraseña, DUI, correo, telefono)
+
+
+Tipos usuarios:
+-Administrador.
+Podrá ver y manipular (relacionarse) a: 
+	-Empresa.
+		1.Codigo Empresa (tres letras y tres digitos)(PRIMARY KEY)
+		2. TIPOUSUARIO
+		5.Nombre de contacto
+		8.Rubro (tipo de negocio)
+		9. Porcentaje de comision por venta de cupon
+		10. Contraseña (Con metodos se creará, por lo tanto tanto puede quedar NULL)
+		11.Ofertas (relacionado con tabla ofertas)
+		12. Estado de oferta (DE LA TABLA OFERTAS)
+		13: Datos de la oferta (de la table Ofertas)
+		14.Cupones vendidos (DE LA TABLA OFERTA)
+		15. Ingreso totales (DE LA TABLE OFERTA)
+		16. Cargo por servicio (DE LA TABLA OFERTA)
+
+	-Ofertas.
+		1.Titulo de la oferta
+			1.1 CODIGO OFERTA
+		Precio regular
+	 	Precio de la oferta
+		Fecha de inicio de la oferta
+		Fecha de fin de la oferta
+		 Fecha límite para usar el cupón
+		Cantidad límite de cupones (campo opcional pues es posible que una empresa no desee 		limitar la cantidad de boletos a vender)
+		Descripción de la oferta
+		3.Cupones vendidos (int)
+		4. Cupones disponibles (int)
+		5. Ingreso totales (numero de cupones vendidos * precio del cupon)
+		6. Cargo por servicio (ingresos totales * porcentajeComision) 
+		7. Porcentaje comision (DE LA TABLA EMPRESA)
+		8.Estado
+		9. NOMBRE EMPRESA (DE LA TABLA EMPRESA)
+		10. Fecha de vigencia
+
+	-Clientes.
+		1. ID cliente
+		2.2 ID USUARIO (DE LA TABLA TIPOUSUARIO)
+		3. Cupones categorizados (disponibles, canjeados y cupones vencidos) (Y PODRA VERLO EL 		DEPENDIENTE DE SUCURSAL)
+		
+
+-ADMINISTRADOR DE EMPRESA OFERTANTE:
+		1. ID
+		2. ID USUARIO (DE LA TABLA USUARIO)
+		3. ESTADO de ofertas de su misma empresa
+		4. ID EMPRESA (DE LA TABLA EMPRESA)
+		5. Cupones vendidos (int)
+		6. Cupones disponibles (int)
+		8. Ingreso totales (numero de cupones vendidos * precio del cupon)
+		9. Cargo por servicio (ingresos totales * porcentajeComision)
+
+	Y manipulara a: 
+		-DEPENDIENTE DE SUCURSAL:
+		1. ID
+		2. IDUSUARIO
+		3. CODIGO OFERTA
+		4. DUI (DE LA TABLA CLIENTES)
+		5. ESTADO (DE LA TABLA OFERTA) Y SE RESTA DE LOS CUPONES DISPONIBLES
+		6.Contraseña
+
+
+

@@ -1,0 +1,95 @@
+============================Tabla: Empresas=================================
+ID (PK, entero autoincremental)
+Nombre de la empresa (cadena de texto)
+Código de la empresa (cadena de texto)
+Dirección de la empresa (cadena de texto)
+Nombre del contacto (cadena de texto)
+Teléfono del contacto (cadena de texto)
+Correo del contacto (cadena de texto)
+Rubro (cadena de texto, ej. restaurantes, talleres, etc.)
+Comisión por cupón (decimal)
+Contraseña generada aleatoriamente (cadena de texto)
+Otros detalles de la empresa (texto u otros campos relevantes)
+Contraseña generada aleatoriamente (cadena de texto)
+
+===========================Tabla: Rubros=====================================
+
+ID (PK, entero autoincremental)
+Nombre del rubro (cadena de texto)
+Otros detalles del rubro (texto u otros campos relevantes)
+
+=======================Tabla: Clientes======================================
+ID (PK, entero autoincremental)
+Nombre del cliente (cadena de texto)
+DUI (Documento Único de Identidad, cadena de texto)
+Correo electrónico del cliente (cadena de texto)
+Teléfono del cliente (cadena de texto)
+Otros detalles del cliente (texto u otros campos relevantes)
+Token de verificación de correo (cadena de texto)
+Estado de verificación de cuenta (booleano)
+Otros detalles del cliente (texto u otros campos relevantes)
+
+
+===================================Tabla: Ofertas============================
+ID (PK, entero autoincremental)
+Empresa ID (FK a Empresas, entero)
+Título de la oferta (cadena de texto)
+Precio regular (decimal)
+Precio de la oferta (decimal)
+Fecha de inicio de la oferta (fecha y hora)
+Fecha de fin de la oferta (fecha y hora)
+Fecha límite para usar el cupón (fecha)
+Cantidad límite de cupones (entero, opcional)
+Descripción de la oferta (texto)
+Estado de la oferta (cadena de texto: "En espera de aprobación", "Oferta aprobada", "Oferta rechazada", "Oferta descartada")
+Justificación del rechazo (texto, si aplica)
+Medios de pago aceptados (lista de opciones, ej. tarjeta de crédito, PayPal, etc.)
+Términos y condiciones (texto)
+Otros detalles de la oferta (texto u otros campos relevantes)
+==============================Tabla: Cupones=====================================
+ID (PK, entero autoincremental)
+Oferta ID (FK a Ofertas, entero)
+Cliente ID (FK a Clientes, entero)
+Código único del cupón (cadena de texto)
+Fecha de generación del cupón (fecha y hora)
+Fecha de redención del cupón (fecha y hora)
+Estado de redención del cupón (ej. "No utilizado", "Utilizado")
+Otros detalles del cupón (texto u otros campos relevantes)
+===============================Tabla: Compras=====================================
+
+ID (PK, entero autoincremental)
+Cupón ID (FK a Cupones, entero)
+Cliente ID (FK a Clientes, entero)
+Fecha de compra (fecha y hora)
+Monto de la compra (decimal)
+Método de pago (cadena de texto, ej. "Tarjeta de crédito", "PayPal")
+Otros detalles de la compra (texto u otros campos relevantes)
+
+=============================Tabla: DependientesSucursal=====================================
+
+ID (PK, entero autoincremental)
+Empresa ID (FK a Empresas, entero)
+Nombres del dependiente (cadena de texto)
+Apellidos del dependiente (cadena de texto)
+Correo electrónico del dependiente (cadena de texto)
+Contraseña generada aleatoriamente (cadena de texto)
+Otros detalles del dependiente (texto u otros campos relevantes)
+===========================Tabla: TokenClientes=====================================
+
+ID (PK, entero autoincremental)
+Cliente ID (FK a Clientes, entero)
+Token (cadena de texto)
+Fecha de creación del token (fecha y hora)
+===========================Tabla: AccionesClientes=====================================
+
+ID (PK, entero autoincremental)
+Cliente ID (FK a Clientes, entero)
+Acción realizada (cadena de texto)
+Fecha de la acción (fecha y hora)
+===========================Tabla: AccionesDependientes=====================================
+
+ID (PK, entero autoincremental)
+Dependiente ID (FK a DependientesSucursal, entero)
+Acción realizada (cadena de texto)
+Fecha de la acción (fecha y hora)
+==========================================================================================

@@ -1,0 +1,56 @@
+La cuponera base de datos
+//Detalles de la empresa que va a hacer la solicitud
+ -codigoEmpresa
+ -nombreEmpresa
+ -direccion
+ -nombreContacto
+ -telefono
+ -correo
+ -rubroEmpresa //(restaurantes, talleres, salones de belleza,etc)
+ -comision
+
+//Esta es la que nos dice el item n1 del documento de ahí lo saqué
+promocion
+ -tituloOferta
+ -codigoEmpresa //para ver quien es la empresa a la cual estamos haciendo la promocion
+ -precioRegular
+ -precioOferta
+ -fechaInicio
+ -fechaFin
+ -fechaLimite
+ -cantidadLimiteCupones
+ -cuponesVendidos
+ -estado //esa sería para ver si ha sido aprodada o esta en espera
+ -descripcion
+ -usuarioLogin //para ver la información del cliente
+
+//Esta tabla sería para ver la información del empleado, el nombre y apellido sería como para registrar un usuario y logeado se vea GOODS
+Usuarios
+ -usuarioLogin
+ -contraLogin
+ -tipoUsuario // si es empleado, admin o cliente
+ -duiUsuario
+ -correoUsuario
+ -nombreUsuario
+ -apellidoUsuario
+ -telefonoUsuario
+ -direccionUsuario
+
+//Se llevará la información de comprar cupones
+Compras
+ -codigoCompra
+ -precioOferta
+ -pago
+ -tituloOferta
+ -usuarioLogin //vamos a acceder a la tabla usuarios para ver la información de tipoUsuario(cliente)para registrarlo con su nombre
+
+
+// tabla para cobrar, valer los cupones o información de los cupones
+ cupones
+ -duiUsuario
+ -codigoCompra
+ -codigoEmpresa
+ -usuarioLogin
+ -comision
+ -categorizacion //cupones disponibles, cupones canjeados y cupones vencidos.
+
