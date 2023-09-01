@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>La cuponera</title>
+<title>La cuponera SV</title>
 <link rel="stylesheet" href="css/bootstrap1.min.css">
 <link rel="stylesheet" href="css/estilo.css">
 </head>
