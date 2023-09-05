@@ -17,7 +17,7 @@ public class AeBeans {
 	private Date fechaLimiteCupon;
 	private int cantidadLimiteCupones;
 	private int cuponesVendidos;
-	private int descripcionOferta;
+	private String descripcionOferta;
 	private double comision;
 	private double ingresosTotales;
 	public LogBeans logBeans;
@@ -33,7 +33,7 @@ public class AeBeans {
 		this.fechaLimiteCupon = null;
 		this.cantidadLimiteCupones = 0;
 		this.cuponesVendidos = 0;
-		this.descripcionOferta = 0;
+		this.descripcionOferta = "";
 		this.comision = 0;
 		this.ingresosTotales = 0;
 		this.logBeans = null;
@@ -45,7 +45,7 @@ public class AeBeans {
 	
 	public AeBeans(String codigoOferta, String tituloOferta, String estado, double precioRegular, double precioOferta,
 			Date fechaInicioOferta, Date fechaFinOferta, Date fechaLimiteCupon, int cantidadLimiteCupones,
-			int cuponesVendidos, int descripcionOferta, double comision, double ingresosTotales, LogBeans logBeans) {
+			int cuponesVendidos, String descripcionOferta, double comision, double ingresosTotales, LogBeans logBeans) {
 		this.codigoOferta = codigoOferta;
 		this.tituloOferta = tituloOferta;
 		this.estado = estado;
@@ -124,10 +124,10 @@ public class AeBeans {
 	public void setCuponesVendidos(int cuponesVendidos) {
 		this.cuponesVendidos = cuponesVendidos;
 	}
-	public int getDescripcionOferta() {
+	public String getDescripcionOferta() {
 		return descripcionOferta;
 	}
-	public void setDescripcionOferta(int descripcionOferta) {
+	public void setDescripcionOferta(String descripcionOferta) {
 		this.descripcionOferta = descripcionOferta;
 	}
 	public double getComision() {
