@@ -65,6 +65,10 @@ public class OfertasBeans {
 	
 	
 
+	public OfertasBeans() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getCodigoOferta() {
 		return codigoOferta;
 	}

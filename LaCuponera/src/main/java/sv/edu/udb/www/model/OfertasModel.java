@@ -1,4 +1,4 @@
-import sv.edu.udb.www.beans.OfertasBeans;
+import sv.edu.udb.www.beans.*;
 import sv.edu.udb.www.controller.LogControler;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class OfertasModel extends Conexion {
             cs = conexion.prepareCall(sql);
             rs = cs.executeQuery();
             while (rs.next()) {
-            	OfertasModel oferta = new OfertasModel();
+            	OfertasBeans oferta = new OfertasBeans();
                 oferta.setCodigoOferta(rs.getString("codigoOferta"));
                 oferta.setTituloOferta(rs.getString("tituloOferta"));
                 oferta.setPrecioRegular(rs.getDouble("precio"));
@@ -41,3 +41,4 @@ public class OfertasModel extends Conexion {
         }
     }
 }
+s
