@@ -5,7 +5,7 @@ import java.sql.Date;
 
 import sv.edu.udb.www.beans.LogBeans;
 
-public class AeBeans {
+public class OfertasBeans {
 	
 	private String codigoOferta;
 	private String tituloOferta;
@@ -22,7 +22,7 @@ public class AeBeans {
 	private double ingresosTotales;
 	public LogBeans logBeans;
 	
-	public AeBeans() {
+	public void OfertaBeans() {
 		this.codigoOferta = "";
 		this.tituloOferta = "";
 		this.estado = "";
@@ -39,11 +39,11 @@ public class AeBeans {
 		this.logBeans = null;
 	}	
 	
-	public AeBeans(String tituloOferta) {
+	public OfertasBeans(String tituloOferta) {
 		this.tituloOferta = tituloOferta; }
 	
 	
-	public AeBeans(String codigoOferta, String tituloOferta, String estado, double precioRegular, double precioOferta,
+	public OfertasBeans(String codigoOferta, String tituloOferta, String estado, double precioRegular, double precioOferta,
 			Date fechaInicioOferta, Date fechaFinOferta, Date fechaLimiteCupon, int cantidadLimiteCupones,
 			int cuponesVendidos, String descripcionOferta, double comision, double ingresosTotales, LogBeans logBeans) {
 		this.codigoOferta = codigoOferta;
@@ -64,6 +64,7 @@ public class AeBeans {
 	}	
 	
 	
+
 	public String getCodigoOferta() {
 		return codigoOferta;
 	}
